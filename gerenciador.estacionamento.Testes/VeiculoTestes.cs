@@ -1,5 +1,8 @@
 using gerenciador.estacionamento.Estacionamento.Modelos;
 using System;
+using System.Numerics;
+using System.Reflection;
+using System.Runtime.ConstrainedExecution;
 using Xunit;
 
 namespace gerenciador.estacionamento.Testes
@@ -128,6 +131,24 @@ namespace gerenciador.estacionamento.Testes
             Assert.Equal(
                 (veiculoAlterado.Proprietario, veiculoAlterado.Modelo, veiculoAlterado.Largura, veiculoAlterado.Cor),
                 (veiculo.Proprietario, veiculo.Modelo, veiculo.Largura, veiculo.Cor));
+        }
+
+        [Fact]
+        public void DadosVeiculo()
+        {
+            //Arrange
+            var veiculo = new Veiculo();
+            veiculo.Proprietario = "Lucas Inácio";
+            veiculo.Tipo = TipoVeiculo.Automovel;
+            veiculo.Placa = "XJC-5487";
+            veiculo.Cor = "Rosa";
+            veiculo.Modelo = "Cruze";
+
+            //Act
+            string dados = veiculo.ToString();
+
+            //Assert
+            Assert.Contains("Tipo do Veículo: Automovel", dados);
         }
     }
 }
