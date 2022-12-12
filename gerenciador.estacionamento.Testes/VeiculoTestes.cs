@@ -158,5 +158,35 @@ namespace gerenciador.estacionamento.Testes
             //Assert
             Assert.Contains("Tipo do Veículo: Automovel", dados);
         }
+
+        [Fact]
+        //Testando a inclusão de um nome com menos de 3 caracteres e caindo na exception
+        public void TestaNomeError()
+        {
+            //Arrange
+            string nomeProprietario = "Ab";
+
+            //Assert 
+            //No Throw temos que passar exatamente a exception devolvida nessa validação
+            Assert.Throws<System.FormatException>(
+                //Act
+                () => new Veiculo(nomeProprietario)
+            );
+        }
+
+        [Fact]
+        public void TestaQuartoCaracterDaPlaca() 
+        {
+            //Arrange
+            string placa = "ASDR2145";
+
+            //Act
+            var mensagem = Assert.Throws<System.FormatException>(
+                () => new Veiculo().Placa = placa    
+            );
+
+            //Assert
+            Assert.Equal("O 4° caractere deve ser um hífen", mensagem.Message);
+        }
     }
 }
