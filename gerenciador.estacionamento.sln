@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gerenciador.estacionamento", "gerenciador.estacionamento\gerenciador.estacionamento.csproj", "{F70297AB-71C4-4251-93EE-C2E53C779737}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gerenciador.estacionamento.Testes", "gerenciador.estacionamento.Testes\gerenciador.estacionamento.Testes.csproj", "{8938B250-7806-466E-AD2D-5E189166F2E4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F70297AB-71C4-4251-93EE-C2E53C779737}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F70297AB-71C4-4251-93EE-C2E53C779737}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F70297AB-71C4-4251-93EE-C2E53C779737}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8938B250-7806-466E-AD2D-5E189166F2E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8938B250-7806-466E-AD2D-5E189166F2E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8938B250-7806-466E-AD2D-5E189166F2E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8938B250-7806-466E-AD2D-5E189166F2E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
