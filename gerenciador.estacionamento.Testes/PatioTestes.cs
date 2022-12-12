@@ -5,12 +5,20 @@ namespace gerenciador.estacionamento.Testes
 {
     public class PatioTestes
     {
+        private Veiculo veiculo;
+        private Patio estacionamento;
+        public PatioTestes()
+        {
+            //Setup - Preparação do cenário de testes
+            //A criação do Setup dessa forma evita a instancia de um novo veiculo e estacionamento em cada Arrange
+            veiculo = new Veiculo();
+            estacionamento = new Patio();
+        }
+
         [Fact]
         public void ValidaFaturamento()
         {
             //Arrange
-            var estacionamento = new Patio();
-            var veiculo = new Veiculo();
             veiculo.Proprietario = "Ranimy";
             veiculo.Tipo = TipoVeiculo.Automovel;
             veiculo.Cor = "Verde";
@@ -34,8 +42,6 @@ namespace gerenciador.estacionamento.Testes
         public void ValidaFaturamentoComVariosVeiculos(string proprietario, string placa, string cor, string modelo)
         {
             //Arrange
-            var estacionamento = new Patio();
-            var veiculo = new Veiculo();
             veiculo.Proprietario = proprietario;
             veiculo.Placa = placa;
             veiculo.Cor = cor;
@@ -57,8 +63,6 @@ namespace gerenciador.estacionamento.Testes
         public void LocalizaVeiculoNoPatio(string proprietario, string placa, string cor, string modelo)
         {
             //Arrange
-            var estacionamento = new Patio();
-            var veiculo = new Veiculo();
             veiculo.Proprietario = proprietario;
             veiculo.Placa = placa;
             veiculo.Cor = cor;
