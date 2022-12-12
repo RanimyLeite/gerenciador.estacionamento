@@ -50,5 +50,26 @@ namespace gerenciador.estacionamento.Testes
             //Assert
             Assert.Equal(2, faturamento);
         }
+
+        [Theory]
+        [InlineData("Ranimy Leite", "OHD-5468", "Preto", "Gol")]
+        [InlineData("Luiz Ajota", "ASI-7841", "Azul", "Renegade")]
+        public void LocalizaVeiculoNoPatio(string proprietario, string placa, string cor, string modelo)
+        {
+            //Arrange
+            var estacionamento = new Patio();
+            var veiculo = new Veiculo();
+            veiculo.Proprietario = proprietario;
+            veiculo.Placa = placa;
+            veiculo.Cor = cor;
+            veiculo.Modelo = modelo;
+            estacionamento.RegistrarEntradaVeiculo(veiculo); //Cria uma entrada de veiculo
+
+            //Act
+            estacionamento.PesquisaVeiculoPorPlaca(veiculo.Placa);
+
+            //Assert
+            Assert.Equal(placa, veiculo.Placa);
+        }
     }
 }
