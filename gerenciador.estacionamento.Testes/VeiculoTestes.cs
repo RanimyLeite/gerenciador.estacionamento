@@ -14,12 +14,20 @@ namespace gerenciador.estacionamento.Testes
         public double Largura { get; set; }
         public string Modelo { get; set; }
 
+        private Veiculo veiculo;
+        public VeiculoTestes()
+        {
+            //Setup - Preparação do cenário de testes
+            //A criação do Setup dessa forma evita a instancia de um novo veiculo em cada Arrange
+            veiculo = new Veiculo();
+        }
+
         [Fact]
         //Teste do método Acelerar da classe Veiculo
         public void TestaVeiculoAcelerar()
         {
             //Arrange - Criação de variável e instancia de objeto necessário para o teste
-            var veiculo = new Veiculo();
+            //var veiculo = new Veiculo();
 
             //Act - Teste do método passando um valor
             veiculo.Acelerar(10); 
@@ -33,7 +41,7 @@ namespace gerenciador.estacionamento.Testes
         public void TestaVeiculoFrear()
         {
             //Arrange
-            var veiculo = new Veiculo();
+            //var veiculo = new Veiculo();
 
             //Act
             veiculo.Frear(10);
@@ -46,7 +54,7 @@ namespace gerenciador.estacionamento.Testes
         public void TestaTipoVeiculo()
         {
             //Arrange
-            var veiculo = new Veiculo();
+            //var veiculo = new Veiculo();
 
             //Act
             veiculo.Tipo = TipoVeiculo.Automovel;
@@ -59,7 +67,7 @@ namespace gerenciador.estacionamento.Testes
         public void TestaVeiculoPlaca()
         {
             //Arrange
-            var veiculo = new Veiculo();
+            //var veiculo = new Veiculo();
 
             //Act
             veiculo.Placa = "abc-1234";
@@ -73,7 +81,7 @@ namespace gerenciador.estacionamento.Testes
         public void TestaProprietarioVeiculo()
         {
             //Arrange
-            var veiculo = new Veiculo();
+            //var veiculo = new Veiculo();
 
             //Act
             veiculo.Proprietario = "Ranimy";
@@ -86,7 +94,7 @@ namespace gerenciador.estacionamento.Testes
         public void TestaHorarioEntrada()
         {
             //Arrange
-            var veiculo = new Veiculo();
+            //var veiculo = new Veiculo();
             var horarioEntrada = DateTime.Now;
 
             //Act
@@ -100,7 +108,7 @@ namespace gerenciador.estacionamento.Testes
         public void TestaHorarioSaida()
         {
             //Arrange
-            var veiculo = new Veiculo();
+            //var veiculo = new Veiculo();
             var horarioSaida = DateTime.Now;
 
             //Act
@@ -114,7 +122,7 @@ namespace gerenciador.estacionamento.Testes
         public void TesteAlteraDadosVeiculo()
         {
             //Arrange
-            var veiculo = new Veiculo();
+            //var veiculo = new Veiculo();
 
             var veiculoAlterado = new Veiculo
             (
@@ -137,7 +145,7 @@ namespace gerenciador.estacionamento.Testes
         public void DadosVeiculo()
         {
             //Arrange
-            var veiculo = new Veiculo();
+            //var veiculo = new Veiculo();
             veiculo.Proprietario = "Lucas Inácio";
             veiculo.Tipo = TipoVeiculo.Automovel;
             veiculo.Placa = "XJC-5487";
