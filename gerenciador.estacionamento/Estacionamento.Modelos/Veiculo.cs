@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace gerenciador.estacionamento.Estacionamento.Modelos
 {
@@ -129,7 +125,12 @@ namespace gerenciador.estacionamento.Estacionamento.Modelos
             Proprietario = proprietario;
         }
 
-
-
+        public Veiculo(string proprietario, string modelo, double largura, string cor)
+        {
+            Proprietario = proprietario;
+            Modelo = modelo;
+            Largura = largura;  
+            Cor = cor;
+        }
     }
 }
